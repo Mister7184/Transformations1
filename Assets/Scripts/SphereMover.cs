@@ -20,10 +20,6 @@ public class SphereMover : MonoBehaviour
             if (transform.position.z >= _maxZ)
             {
                 _movingForward = false;
-
-                Vector3 maxPosition = transform.position;
-                maxPosition.z = _maxZ;
-                transform.position = maxPosition;
             }
         }
         else
@@ -33,10 +29,6 @@ public class SphereMover : MonoBehaviour
             if (transform.position.z <= _minZ)
             {
                 _movingForward = true;
-
-                Vector3 minPosition = transform.position;
-                minPosition.z = _minZ;
-                transform.position = minPosition;
             }  
         }
     }

@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
-public class SphereMover : MonoBehaviour
+public class Mover : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _minZ = 0f;
@@ -15,7 +12,7 @@ public class SphereMover : MonoBehaviour
     {
         if (_movingForward)
         {
-            transform.position += new Vector3(0, 0, _speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
 
             if (transform.position.z >= _maxZ)
             {
@@ -24,7 +21,7 @@ public class SphereMover : MonoBehaviour
         }
         else
         {
-            transform.position -= new Vector3(0, 0, _speed * Time.deltaTime);
+            transform.Translate(Vector3.back * _speed * Time.deltaTime);
 
             if (transform.position.z <= _minZ)
             {
